@@ -12,11 +12,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.Date;
 import java.util.Map;
 
-//sss
 @Controller
 public class GreetingController {
-    @Autowired
-    private AdminRepo adminRepo;
+    //@Autowired
+    //private AdminRepo adminRepo;
 
     @GetMapping("/greeting")
     public String greeting(@RequestParam(name="name", required=false, defaultValue="Stranger") String name, Model model) {
@@ -24,7 +23,7 @@ public class GreetingController {
         return "greeting.mustache";
     }
 
-    @GetMapping
+    /*@GetMapping
     public String main(Map<String,Object> model) {
         Iterable< Admin > admins = adminRepo.findAll();
         model.put("admins", admins);
@@ -36,6 +35,6 @@ public class GreetingController {
         new Admin();
         return "main.mustache";
 }
-
+*/
 
 }
