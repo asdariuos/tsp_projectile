@@ -1,7 +1,6 @@
 package com.example.tsp_projectile.models;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @Table(name = "products")
@@ -10,7 +9,8 @@ public class Product {
      @Id
      @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private int id;
+     @Column(name = "id")
+    private int Order_id;
     private String Title;
     private int Author_id;
     private int Genre_id;
@@ -21,10 +21,44 @@ public class Product {
     //private Link_cover_photo;
     private boolean Is_deleted;
 
-    /*@ManyToOne(fetch = FetchType.LAZY)
-     * JoinColumn(name = "client_id")
-     * private models.Client client;
-     */
+    @OneToOne(mappedBy = "id", cascade = CascadeType.ALL)
+    private Author author;
+
+    @OneToOne(mappedBy = "id", cascade = CascadeType.ALL)
+    private Genre genre;
+
+    @OneToOne(mappedBy = "id", cascade = CascadeType.ALL)
+    private Publication publication;
+
+    @OneToOne(mappedBy = "Product_id", cascade = CascadeType.ALL)
+    private Instance instance;
+
+    public Genre getGenre(){
+        return genre;
+    }
+    public void  setGenre(Genre genre){
+        this.genre=genre;
+    }
+    public Author getAuthor(){
+        return author;
+    }
+    public void  setAuthor(Author author){
+        this.author=author;
+    }
+    public Publication getPublication(){
+        return publication;
+    }
+    public void  setPublication(Publication publication){
+        this.publication=publication;
+    }
+
+
+    public Instance getInstance(){
+        return instance;
+    }
+    public void  setInstance(Instance instance){
+        this.instance=instance;
+    }
 
     public Product(String Title, int Author_id, int Genre_id, int Publication_id, String Description, int Price, int Amount) {
         this.Title = Title;
@@ -42,7 +76,7 @@ public class Product {
     }
 
     public int getId(){
-        return id;
+        return Order_id;
     }
 
 
@@ -119,7 +153,7 @@ public class Product {
 
     @Override
     public String toString(){
-        return "models.models.Product{"+"id="+id +", Title=' " + Title + '\'' + ", Author_id=" + Author_id + '\'' + ", Genre_id=" + Genre_id  + '\'' + ", Publication_id=" + Publication_id  + '\'' + ", Description=" + Description  + '\'' + ", Price=" + Price  + '\'' + ", Amount=" + Amount  + '\'' + ", Is_deleted=" + Is_deleted + '}';
+        return "models.models.Product{"+"id="+Order_id +", Title=' " + Title + '\'' + ", Author_id=" + Author_id + '\'' + ", Genre_id=" + Genre_id  + '\'' + ", Publication_id=" + Publication_id  + '\'' + ", Description=" + Description  + '\'' + ", Price=" + Price  + '\'' + ", Amount=" + Amount  + '\'' + ", Is_deleted=" + Is_deleted + '}';
     }
 
 

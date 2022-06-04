@@ -8,8 +8,6 @@ import java.util.List;
 @Entity
 @Table(name="orders")
 public class Order {
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idOrder_N;
@@ -19,42 +17,26 @@ public class Order {
     private Date Order_date;
     private boolean Is_deleted;
 
-    /*@ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="Client_id")
-    private Client client;*/
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "Order_N")
+    private List<Instance> instances;
 
-    /*@OneToMany(mappedBy = "idOrder_N",cascade = CascadeType.ALL,orphanRemoval = true)
-    private List<Instance> instances;*/
-
-
-
+    public List<Instance> getInstances(){
+        return instances;
+    }
+    public void  setOrders(List<Instance> instances){
+        this.instances=instances;
+    }
     public Order(int Client_id, int Price, String Order_status, Date Order_date) {
         this.Client_id = Client_id;
         this.Price = Price;
         this.Order_status = Order_status;
         this.Order_date = Order_date;
         this.Is_deleted = false;
-        //instances=new ArrayList<>();
     }
 
     public Order(){
 
     }
-
-    /*public void addInstance(Instance instance){
-        instance.setInstance(this);
-        instances.add(instance);
-    }
-    */
-
-   /* public Client getClient(){
-        return client;
-    }*/
-
-    /*public void setClient(Client client){
-        this.client=client;
-    }*/
-
 
     public int getIdOrder_N(){
         return idOrder_N;

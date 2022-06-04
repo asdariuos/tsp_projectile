@@ -1,4 +1,4 @@
-package com.example.tsp_projectile.domain;
+package com.example.tsp_projectile.repo;
 
 import com.example.tsp_projectile.models.Product;
 import org.springframework.data.repository.CrudRepository;

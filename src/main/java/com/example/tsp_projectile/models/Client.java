@@ -1,5 +1,7 @@
 package com.example.tsp_projectile.models;
 
+import org.aspectj.weaver.ast.Or;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
@@ -12,7 +14,7 @@ public class Client {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private int id;
-    //@Column(name = "Client_name")
+    @Column(name = "Client_name")
     private String name;
     private Date Birthday_date;
     private String Login;
@@ -20,10 +22,14 @@ public class Client {
     private String Phone;
     private String Address;
     private boolean Is_deleted;
-
-    /*@OneToMany(mappedBy = "clients", cascade = CascadeType.ALL, orphanRemoval = true)
-     private List<Order> orders;*/
-
+    @OneToMany(cascade = CascadeType.ALL,mappedBy ="Client_id")
+    private List<Order> orders;
+    public List<Order> getOrders(){
+        return orders;
+    }
+    public void  setOrders(List<Order> orders){
+        this.orders=orders;
+    }
     public Client(String name, Date Birthday_date, String Login, String Client_password, String Phone, String Address) {
         this.name = name;
         this.Birthday_date = Birthday_date;
@@ -32,25 +38,13 @@ public class Client {
         this.Phone = Phone;
         this.Address = Address;
         this.Is_deleted = false;
-        //products = new ArrayList<>();
+
     }
 
     public  Client(){
 
     }
 
-
-    /* public void addProduct(models.Product product){
-     *    product.setClient(this);
-     *    products.add(product)
-     *    }
-     */
-
-
-    /* public void removeProduct(models.Product product){
-     *    products.remove(product)
-     *    }
-     * */
 
 
     public int getId(){

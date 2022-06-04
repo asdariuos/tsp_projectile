@@ -16,16 +16,14 @@ public class Instance {
     private int Copies;
     private boolean Is_deleted;
 
-    /*@ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "Product_id")
-    private Order order;*/
-
-
-    /*@ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id")
-    private Product product;*/
-
-
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "Order_id")
+    private Product product;
+    public Product getProduct(){
+        return product;
+    }
+    public void  setProduct(Product product){
+        this.product=product;
+    }
 
     public Instance(int Product_id, int Order_N,int Copies) {
         this.Product_id = Product_id;
