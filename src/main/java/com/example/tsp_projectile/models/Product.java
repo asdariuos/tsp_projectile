@@ -21,16 +21,20 @@ public class Product {
     //private Link_cover_photo;
     private boolean Is_deleted;
 
-    @OneToOne(mappedBy = "id", cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id")
     private Author author;
 
-    @OneToOne(mappedBy = "id", cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id")
     private Genre genre;
 
-    @OneToOne(mappedBy = "id", cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id")
     private Publication publication;
 
-    @OneToOne(mappedBy = "Product_id", cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "Product_id")
     private Instance instance;
 
     public Genre getGenre(){

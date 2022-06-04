@@ -11,9 +11,6 @@ public class Publication {
     private String Publication_name;
     private boolean Is_deleted;
 
-    @OneToOne(mappedBy = "Publication_id", cascade = CascadeType.ALL)
-    private Product product;
-
 
     public Publication(String Publication_name)
     {
@@ -51,14 +48,5 @@ public class Publication {
     @Override
     public String toString(){
         return "models.Publication{"+"id="+id +", Publication_name=' " + Publication_name + '\'' + ", Is_deleted=" + Is_deleted + '}';
-    }
-
-
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
     }
 }

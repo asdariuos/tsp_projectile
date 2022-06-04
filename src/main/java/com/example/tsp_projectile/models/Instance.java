@@ -16,15 +16,17 @@ public class Instance {
     private int Copies;
     private boolean Is_deleted;
 
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "Order_id")
+    /* @OneToOne(cascade = CascadeType.ALL, mappedBy = "Order_id")
     private Product product;
+
     public Product getProduct(){
+
         return product;
     }
     public void  setProduct(Product product){
         this.product=product;
     }
-
+*/
     public Instance(int Product_id, int Order_N,int Copies) {
         this.Product_id = Product_id;
         this.Order_N = Order_N;

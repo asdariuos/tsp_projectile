@@ -9,11 +9,6 @@ public class Genre {
     private int id;
     private String Genre_name;
     private boolean Is_deleted;
-
-    @OneToOne(mappedBy = "Genre_id", cascade = CascadeType.ALL)
-    private Product product;
-
-
     public Genre(){}
 
 
@@ -43,11 +38,4 @@ public class Genre {
         return "models.genres{"+"id="+id +", Genre_name=' " + Genre_name + '\'' + ", Is_deleted=" + Is_deleted + '}';
     }
 
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
-    }
 }

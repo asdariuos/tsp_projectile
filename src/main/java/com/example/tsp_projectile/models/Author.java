@@ -10,8 +10,6 @@ public class Author {
     private int id;
     private String Author_name;
     private boolean Is_deleted;
-    @OneToOne(mappedBy = "Author_id", cascade = CascadeType.ALL)
-    private Product product;
     public Author (String Author_name)
     {
         this.Author_name=Author_name;
@@ -51,11 +49,4 @@ public class Author {
     }
 
 
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
-    }
 }
