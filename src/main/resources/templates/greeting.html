@@ -1,10 +1,36 @@
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html>
 <head>
-  <title>Getting Started: Serving Web Content</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="content-type" charset = "utf-8">
+  <title>Вход</title>
+  <link type="text/css " href = "../static/main.css" rel = "stylesheet">
 </head>
 <body>
-<p th:text="'Hello, ' + ${name} + '!'" />
+<div class = "container">
+  <section>
+    <form>
+      <label>
+        <input name = "name" id = "name" type = "text">
+        <div class = "label-text">
+          Логин
+        </div>
+      </label>
+      <label>
+        <input type = "password" name = "password" id = "password">
+        <div class = "label-text">
+          Пароль
+        </div>
+      </label>
+      <button type = "submit" value = "submit" class = "login">
+        Войти
+      </button>
+      <div>
+        <button class = "no-account">
+          У меня нет аккаунта
+        </button>
+      </div>
+    </form>
+  </section>
+</div>
 </body>
 </html>

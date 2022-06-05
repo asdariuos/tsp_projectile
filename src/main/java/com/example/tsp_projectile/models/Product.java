@@ -10,7 +10,7 @@ public class Product {
      @GeneratedValue(strategy = GenerationType.IDENTITY)
 
      @Column(name = "id")
-    private int Order_id;
+    private int Product_id;
     private String Title;
     private int Author_id;
     private int Genre_id;
@@ -80,7 +80,7 @@ public class Product {
     }
 
     public int getId(){
-        return Order_id;
+        return Product_id;
     }
 
 
@@ -157,7 +157,7 @@ public class Product {
 
     @Override
     public String toString(){
-        return "models.models.Product{"+"id="+Order_id +", Title=' " + Title + '\'' + ", Author_id=" + Author_id + '\'' + ", Genre_id=" + Genre_id  + '\'' + ", Publication_id=" + Publication_id  + '\'' + ", Description=" + Description  + '\'' + ", Price=" + Price  + '\'' + ", Amount=" + Amount  + '\'' + ", Is_deleted=" + Is_deleted + '}';
+        return "models.models.Product{"+"id="+Product_id +", Title=' " + Title + '\'' + ", Author_id=" + Author_id + '\'' + ", Genre_id=" + Genre_id  + '\'' + ", Publication_id=" + Publication_id  + '\'' + ", Description=" + Description  + '\'' + ", Price=" + Price  + '\'' + ", Amount=" + Amount  + '\'' + ", Is_deleted=" + Is_deleted + '}';
     }
 
 

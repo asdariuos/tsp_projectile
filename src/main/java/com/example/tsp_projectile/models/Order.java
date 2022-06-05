@@ -23,7 +23,7 @@ public class Order {
     public List<Instance> getInstances(){
         return instances;
     }
-    public void  setOrders(List<Instance> instances){
+    public void  setInstances(List<Instance> instances){
         this.instances=instances;
     }
     public Order(int Client_id, int Price, String Order_status, Date Order_date) {
