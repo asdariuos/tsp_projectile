@@ -39,7 +39,9 @@ public class Order {
     public Order(){
 
     }
-
+    public void setIdOrder_N(int idOrder_N) {
+        this.idOrder_N = idOrder_N;
+    }
     public int getIdOrder_N(){
         return idOrder_N;
     }

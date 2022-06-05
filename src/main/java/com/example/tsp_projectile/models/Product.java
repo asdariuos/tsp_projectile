@@ -18,7 +18,8 @@ public class Product {
     private String Description;
     private int Price;
     private int Amount;
-    //private Link_cover_photo;
+
+    private String IMG_path;
     private boolean Is_deleted;
 
     /*
@@ -63,7 +64,7 @@ public class Product {
         this.order = order;
     }
 
-    public Product(String Title, int Author_id, int Genre_id, int Publication_id, String Description, int Price, int Amount) {
+    public Product(String Title, int Author_id, int Genre_id, int Publication_id, String Description, int Price, int Amount,String IMG_path) {
         this.Title = Title;
         this.Author_id = Author_id;
         this.Genre_id = Genre_id;
@@ -71,6 +72,7 @@ public class Product {
         this.Description = Description;
         this.Price = Price;
         this.Amount = Amount;
+        this.IMG_path = IMG_path;
         this.Is_deleted = false;
     }
 
@@ -81,8 +83,9 @@ public class Product {
     public int getId(){
         return Product_id;
     }
-
-
+    public void setId(int Product_id) {
+        this.Product_id = Product_id;
+    }
     public String getTitle(){
         return Title;
     }
@@ -143,7 +146,8 @@ public class Product {
     public void setAmount(int Amount){
         this.Amount=Amount;
     }
-
+    public String  getIMG_path(){return  IMG_path;}
+    public void setIMG_path(String IMG_path){this.IMG_path=IMG_path;}
     public boolean getIs_deleted(){
         return Is_deleted;
     }

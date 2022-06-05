@@ -25,7 +25,10 @@ public class Genre {
         this.Genre_name=Genre_name;
         this.Is_deleted=false;
     }
-
+    public void setId(int id) {
+        this.id = id;
+    }
+    public int getId() {return id;}
     public String getGenre_name() {
         return Genre_name;
     }

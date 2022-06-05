@@ -23,9 +23,10 @@ public interface ProductRepo extends CrudRepository<Product, Integer> {
     Product findByDescription(String Description);
     Product findByPrice(int Price);
     Product findByAmount(int Amount);
+    Product findByIMG_path(String IMG_path);
 
 
-    //Boolean existsByAuthor_idAndGenre_idAndPublication_id(int Author_id,int Genre_id,int Publication_id);/////////блiн.
+    Boolean existsByAuthor_idAndGenre_idAndPublication_id(int Author_id,int Genre_id,int Publication_id);/////////блiн.
 
     List<Product> findAllById(int id);
     List<Product> findAllByTitle(String Title);
@@ -35,7 +36,7 @@ public interface ProductRepo extends CrudRepository<Product, Integer> {
     List<Product> findAllByDescription(String Description);
     List<Product> findAllByPrice(int Price);
     List<Product> findAllByAmount(int Amount);
-
+    List<Product> findAllByIMG_path(String IMG_path);
 
 
     void deleteById(int id);
@@ -46,7 +47,7 @@ public interface ProductRepo extends CrudRepository<Product, Integer> {
     void deleteByDescription(String Description);
     void deleteByPrice(int Price);
     void deleteByAmount(int Amount);
-
+    void deleteByIMG_path(String IMG_path);
 
 }
 

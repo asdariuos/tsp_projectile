@@ -29,7 +29,9 @@ public class Author {
     public Author() {
 
     }
-
+    public void setId(int id) {
+        this.id = id;
+    }
     public int getId(){
         return id;
     }
