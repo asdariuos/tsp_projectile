@@ -65,7 +65,9 @@ public class AdminMenuController {
         Author author = new Author();
         Genre genre = new Genre();
         Publication publication = new Publication();
-/*
+        if (productRepo.existsByAuthor_idAndGenre_idAndPublication_id(Author_id,Genre_id,Publication_id))
+            return "admin/addproduct";
+            /*
         if (productRepo.existsByAuthor_idAndGenre_idAndPublication_id(Author_id,Genre_id,Publication_id))
             return "admin/addproduct";
         else
