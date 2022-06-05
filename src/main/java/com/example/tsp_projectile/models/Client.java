@@ -9,20 +9,19 @@ import java.util.List;
 @Entity
 @Table (name = "clients")
 public class Client {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private int id;
-    @Column(name = "Client_name")
-    private String name;
+
+    private String Client_name;
     private Date Birthday_date;
     private String Login;
     private String Client_password;
     private String Phone;
     private String Address;
     private boolean Is_deleted;
-    @OneToMany(cascade = CascadeType.ALL,mappedBy ="Client_id")
+    /*@OneToMany(cascade = CascadeType.ALL,mappedBy ="Client_id")
     private List<Order> orders;
     public List<Order> getOrders(){
         return orders;
@@ -30,8 +29,9 @@ public class Client {
     public void  setOrders(List<Order> orders){
         this.orders=orders;
     }
+     */
     public Client(String name, Date Birthday_date, String Login, String Client_password, String Phone, String Address) {
-        this.name = name;
+        this.Client_name = name;
         this.Birthday_date = Birthday_date;
         this.Login = Login;
         this.Client_password = Client_password;
@@ -53,12 +53,12 @@ public class Client {
 
 
     public String getName(){
-        return name;
+        return Client_name;
     }
 
 
     public void setName(String name){
-        this.name=name;
+        this.Client_name=name;
     }
 
 
@@ -137,7 +137,7 @@ public class Client {
 
     @Override
     public String toString(){
-        return "models.models.Client{"+"id="+id +", Client_name=' " + name + '\'' + ", Birthday_date=" + Birthday_date + '\'' + ", login=" + Login  + '\'' + ", Client_password=" + Client_password  + '\'' + ", Phone=" + Phone  + '\'' + ", Address=" + Address  + '\'' + ", Is_deleted=" + Is_deleted + '}';
+        return "models.models.Client{"+"id="+id +", Client_name=' " + Client_name + '\'' + ", Birthday_date=" + Birthday_date + '\'' + ", login=" + Login  + '\'' + ", Client_password=" + Client_password  + '\'' + ", Phone=" + Phone  + '\'' + ", Address=" + Address  + '\'' + ", Is_deleted=" + Is_deleted + '}';
     }
 
 }

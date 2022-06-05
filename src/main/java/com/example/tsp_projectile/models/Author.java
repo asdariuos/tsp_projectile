@@ -16,6 +16,16 @@ public class Author {
         this.Is_deleted=false;
     }
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Product product;
+
+    public Product getProduct() {
+        return product;
+    }
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
     public Author() {
 
     }

@@ -11,6 +11,14 @@ public class Genre {
     private boolean Is_deleted;
     public Genre(){}
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Product product;
+    public Product getProduct() {
+        return product;
+    }
+    public void setProduct(Product product) {
+        this.product = product;
+    }
 
     public Genre(String Genre_name)
     {

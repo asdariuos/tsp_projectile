@@ -25,9 +25,6 @@ public class MainController {
     private ClientRepo clientRepository;
 
     @Autowired
-    private InstanceRepo instanceRepository;
-
-    @Autowired
     private OrderRepo orderRepository;
 
     @Autowired

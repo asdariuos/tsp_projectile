@@ -7,7 +7,6 @@ public class Admin{
 
      @Id
      @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private int id;
     @Column(name = "Admin_name")
     private String name;

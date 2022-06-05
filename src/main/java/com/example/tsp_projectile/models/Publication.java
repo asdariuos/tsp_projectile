@@ -12,6 +12,17 @@ public class Publication {
     private boolean Is_deleted;
 
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Product product;
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
+
     public Publication(String Publication_name)
     {
         this.Publication_name=Publication_name;

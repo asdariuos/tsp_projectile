@@ -21,6 +21,7 @@ public class Product {
     //private Link_cover_photo;
     private boolean Is_deleted;
 
+    /*
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id")
     private Author author;
@@ -32,11 +33,6 @@ public class Product {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id")
     private Publication publication;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "Product_id")
-    private Instance instance;
-
     public Genre getGenre(){
         return genre;
     }
@@ -56,12 +52,15 @@ public class Product {
         this.publication=publication;
     }
 
-
-    public Instance getInstance(){
-        return instance;
+*/
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Order order;
+    public Order getOrder() {
+        return order;
     }
-    public void  setInstance(Instance instance){
-        this.instance=instance;
+
+    public void setOrder(Order order) {
+        this.order = order;
     }
 
     public Product(String Title, int Author_id, int Genre_id, int Publication_id, String Description, int Price, int Amount) {

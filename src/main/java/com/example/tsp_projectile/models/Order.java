@@ -17,15 +17,17 @@ public class Order {
     private Date Order_date;
     private boolean Is_deleted;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "Order_N")
-    private List<Instance> instances;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Client client;
 
-    public List<Instance> getInstances(){
-        return instances;
+    public Client getClient() {
+        return client;
     }
-    public void  setInstances(List<Instance> instances){
-        this.instances=instances;
+
+    public void setClient(Client client) {
+        this.client=client;
     }
+
     public Order(int Client_id, int Price, String Order_status, Date Order_date) {
         this.Client_id = Client_id;
         this.Price = Price;
