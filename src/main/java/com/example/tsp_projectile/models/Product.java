@@ -10,69 +10,37 @@ public class Product {
      @GeneratedValue(strategy = GenerationType.IDENTITY)
 
      @Column(name = "id")
-    private int productId;
+    private int id;
     private String title;
-    private int authorId;
-    private int genreId;
-    private int publicationId;
+
+    private String genreName;
+
+    private String publicationName;
+
+    private String authorName;
     private String description;
     private int price;
     private int amount;
 
-    private String imgPath;
     private boolean isDeleted;
 
-    /*
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id")
-    private Author author;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id")
-    private Genre genre;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id")
-    private Publication publication;
-    public Genre getGenre(){
-        return genre;
-    }
-    public void  setGenre(Genre genre){
-        this.genre=genre;
-    }
-    public Author getAuthor(){
-        return author;
-    }
-    public void  setAuthor(Author author){
-        this.author=author;
-    }
-    public Publication getPublication(){
-        return publication;
-    }
-    public void  setPublication(Publication publication){
-        this.publication=publication;
-    }
-
-*/
     @ManyToOne(fetch = FetchType.LAZY)
     private Order order;
     public Order getOrder() {
         return order;
     }
-
     public void setOrder(Order order) {
         this.order = order;
     }
 
-    public Product(String title, int authorId, int genreId, int publicationId, String description, int price, int amount, String imgPath) {
+    public Product(String title, String genreName, String publicationName, String authorName, String description, int price, int amount) {
         this.title = title;
-        this.authorId = authorId;
-        this.genreId = genreId;
-        this.publicationId = publicationId;
+        this.genreName = genreName;
+        this.publicationName = publicationName;
+        this.authorName = authorName;
         this.description = description;
         this.price = price;
         this.amount = amount;
-        this.imgPath = imgPath;
         this.isDeleted = false;
     }
 
@@ -81,10 +49,10 @@ public class Product {
     }
 
     public int getId(){
-        return productId;
+        return id;
     }
     public void setId(int Product_id) {
-        this.productId = Product_id;
+        this.id = Product_id;
     }
     public String getTitle(){
         return title;
@@ -96,29 +64,29 @@ public class Product {
     }
 
 
-    public int getAuthorId(){
-        return authorId;
+    public String getGenreName(){
+        return genreName;
     }
 
 
-    public void setAuthorId(int authorId){
-        this.authorId =authorId;
+    public void setGenreName(String genreName){
+        this.genreName =genreName;
     }
 
-    public int getGenreId(){
-        return genreId;
+    public String getPublicationName(){
+        return publicationName;
     }
 
-    public void setGenreId(int genreId){
-        this.genreId =genreId;
+    public void setPublicationName(String publicationName){
+        this.publicationName =publicationName;
     }
 
-    public int getPublicationId(){
-        return publicationId;
+    public String getAuthorName(){
+        return authorName;
     }
 
-    public void setPublicationId(int publicationId){
-        this.publicationId =publicationId;
+    public void setAuthorName(String authorName){
+        this.authorName =authorName;
     }
 
 
@@ -146,8 +114,7 @@ public class Product {
     public void setAmount(int amount){
         this.amount = amount;
     }
-    public String getImgPath(){return imgPath;}
-    public void setImgPath(String imgPath){this.imgPath =imgPath;}
+
     public boolean getDeleted(){
         return isDeleted;
     }
@@ -160,7 +127,7 @@ public class Product {
 
     @Override
     public String toString(){
-        return "models.models.Product{"+"id="+ productId +", Title=' " + title + '\'' + ", Author_id=" + authorId + '\'' + ", Genre_id=" + genreId + '\'' + ", Publication_id=" + publicationId + '\'' + ", Description=" + description + '\'' + ", Price=" + price + '\'' + ", Amount=" + amount + '\'' + ", Is_deleted=" + isDeleted + '}';
+        return "models.models.Product{"+"id="+ id +", Title=' " + title + '\'' + ", Author=" + authorName + '\'' + ", Genre=" + genreName + '\'' + ", Publication=" + publicationName + '\'' + ", Description=" + description + '\'' + ", Price=" + price + '\'' + ", Amount=" + amount + '\'' + ", Is_deleted=" + isDeleted + '}';
     }
 
 

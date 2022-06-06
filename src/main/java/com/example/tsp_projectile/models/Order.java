@@ -7,7 +7,7 @@ import java.util.Date;
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idOrderN;
+    private int id;
     private int price;
     private String orderStatus;
     private Date orderDate;
@@ -34,11 +34,11 @@ public class Order {
     public Order(){
 
     }
-    public void setIdOrderN(int idOrder_N) {
-        this.idOrderN = idOrder_N;
+    public void setId(int idOrder_N) {
+        this.id = idOrder_N;
     }
-    public int getIdOrderN(){
-        return idOrderN;
+    public int getId(){
+        return id;
     }
 
    /* public int getClient_id(){
@@ -88,7 +88,7 @@ public class Order {
 
     @Override
     public String toString(){
-        return "models.Order{"+"idOrder_N="+ idOrderN + '\'' + ", Price=" + price + '\'' + ", Order_status=" + orderStatus + '\'' + ", Order_date=" + orderDate + '\'' + ", Is_deleted=" + isDeleted + '}';
+        return "models.Order{"+"idOrder_N="+ id + '\'' + ", Price=" + price + '\'' + ", Order_status=" + orderStatus + '\'' + ", Order_date=" + orderDate + '\'' + ", Is_deleted=" + isDeleted + '}';
     }
 
 }

@@ -11,30 +11,19 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class AdminMenuController {
-    /*private ClientRepo clientRepo;
+    private ClientRepo clientRepo;
     private OrderRepo orderRepo;
     private ProductRepo productRepo;
 
-    private AuthorRepo authorRepo;
-
-    private GenreRepo genreRepo;
-
-    private PublicationRepo publicationRepo;
     @Autowired
     AdminMenuController(
             ClientRepo clientRepo,
             OrderRepo orderRepo,
-            ProductRepo productRepo,
-            AuthorRepo authorRepo,
-            GenreRepo genreRepo,
-            PublicationRepo publicationRepo
+            ProductRepo productRepo
     ){
         this.clientRepo=clientRepo;
         this.orderRepo=orderRepo;
         this.productRepo=productRepo;
-        this.authorRepo=authorRepo;
-        this.genreRepo=genreRepo;
-        this.publicationRepo=publicationRepo;
     }
 
     //тут нужны getMappings
@@ -53,21 +42,25 @@ public class AdminMenuController {
 
     @PostMapping("/addproduct")
     public String addproduct(@RequestParam(name = "Title") String Title,
-                             @RequestParam(name = "Author_id") int Author_id,
-                             @RequestParam(name = "Genre_id") int Genre_id,
-                             @RequestParam(name = "Publication_id") int Publication_id,
+                             @RequestParam(name = "Author_Name") String Author_Name,
+                             @RequestParam(name = "Genre_Name") String Genre_name,
+                             @RequestParam(name = "Publication_Name") String Publication_Name,
                              @RequestParam(name = "Description") String Description,
                              @RequestParam(name = "Price") int Price,
                              @RequestParam(name = "Amount") int Amount,
-                             @RequestParam(name = "IMG_path") String IMG_path,
                              Model model) {
         Product product = new Product();
-        Author author = new Author();
-        Genre genre = new Genre();
-        Publication publication = new Publication();
-        if (productRepo.existsByAuthor_idAndGenre_idAndPublication_id(Author_id,Genre_id,Publication_id))
+        if (productRepo.existsByAuthorNameAndGenreNameAndPublicationName(Author_Name,Genre_name,Publication_Name))
             return "admin/addproduct";
-
+        else
+        product.setAuthorName(Author_Name);
+        product.setAmount(Amount);
+        product.setGenreName(Genre_name);
+        product.setPublicationName(Publication_Name);
+        product.setDescription(Description);
+        product.setPrice(Price);
+        product.setTitle(Title);
+        productRepo.save(product);
         return "admin/addproduct";
 
 
@@ -75,11 +68,8 @@ public class AdminMenuController {
 
 
 
+//Админ может менять статус заказа, добавлять книги.
 
 
 
-
-
-
-  */
 }

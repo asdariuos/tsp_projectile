@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -35,13 +36,25 @@ public class MainController {
 */
 
     @GetMapping("/greeting")
-    public String greeting(@RequestParam(name="name", required=false, defaultValue="Stranger") String name, Model model) {
-        model.addAttribute("name", name);
+    public String greeting() {
+
        /* Iterable<Admin> admin = adminRepository.findAll();
         model.addAttribute("admins", admin);*/
 
         return "greeting";
     }
 
+  //@GetMapping ("/registration")
+    //public String registration() {
+//
+//
+     //   return "registration";
+   // }
 
+    @GetMapping ("/shop")
+    public String shop() {
+
+
+        return "shop";
     }
+}

@@ -9,7 +9,7 @@ import java.util.List;
 
 
 public interface ClientRepo extends CrudRepository<Client, Integer> {
-/*
+
     Client findById(int id);
     Client findByClientName(String Client_name);
     Client findByBirthdayDate(Date Birthday_date);
@@ -19,7 +19,7 @@ public interface ClientRepo extends CrudRepository<Client, Integer> {
     Client findByAddress(String Address);
 
     Boolean existsByLogin(String Login);
-    //////////////////
+
 
 
     List<Client> findAllById(int Id);
@@ -38,5 +38,5 @@ public interface ClientRepo extends CrudRepository<Client, Integer> {
     void deleteByPhone(String Phone);
     void deleteByAddress(String Address);//+
 
- */
+
 }

@@ -9,7 +9,7 @@ import java.util.List;
 
 
 public interface AdminRepo extends CrudRepository<Admin, Integer> {
-    /*
+
     Admin findById(int id);
     Admin findByName(String Admin_name);
     Admin findByBirthdayDate(Date Birthday_date);//+
@@ -37,7 +37,7 @@ public interface AdminRepo extends CrudRepository<Admin, Integer> {
     void deleteByPostInCompany(String Post_in_company);
 
 
-*/
+
 
 
 }

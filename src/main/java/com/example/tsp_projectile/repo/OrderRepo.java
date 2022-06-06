@@ -10,31 +10,26 @@ import java.util.List;
 
 
 public interface OrderRepo extends CrudRepository<Order, Integer> {
-/*
-    Order findByidOrderN(int idOrder_N);
-    //Order findByClientId(int Client_id);
+
+    Order findById(int Id);
     Order findByPrice(int Price);
     Order findByOrderStatus(String Order_status);
     Order findByOrderDate(Date Order_date);
-    //Order findByClientId(Client client);
 
 
-    //Boolean existsByidOrder_N(int idOrder_N);
+    Boolean existsById(int Id);
 
-    //List<Order> findAllByClientId(Client client);
-    List<Order> findAllidOrderN(int idOrder_N);
-    //List<Order> findAllByClientId(int Client_id);
+
+    List<Order> findAllById(int Id);
     List<Order> findAllByPrice(int Price);
     List<Order> findAllByOrderStatus(String Order_status);//+
     List<Order> findAllByOrderDate(Date Order_date);
 
-    void deleteByIdOrderN(int idOrder_N);
-    //void deleteByClientId(int Client_id);
+    void deleteById(int Id);
     void deleteByPrice(int Price);
-    void deleteOrderStatus(String Order_status);
+    void deleteByOrderStatus(String Order_status);
     void deleteByOrderDate(Date Order_date);
-    void deleteByClientId(Client client);
-*/
+
 
 
 

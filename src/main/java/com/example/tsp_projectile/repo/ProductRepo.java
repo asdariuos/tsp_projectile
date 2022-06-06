@@ -14,40 +14,37 @@ public interface ProductRepo extends CrudRepository<Product, Integer> {
     public List<Product> product();
     public List<Instance> instance();
 */
-/*
+
     Product findById(int id);
     Product findByTitle(String Title);
-    Product findByAuthorId(int Author_id);
-    Product findByGenreId(int Genre_id);
-    Product findByPublicationId(int Publication_id);
     Product findByDescription(String Description);
     Product findByPrice(int Price);
     Product findByAmount(int Amount);
-    Product findByIMGPath(String IMG_path);//+
 
+    Product findByGenreName(String GenreName);
+    Product findByPublicationName(String PublicationName);
+    Product findByAuthorName(String AuthorName);
 
-    Boolean existsByAuthorIdAndGenreIdAndPublicationId(int Author_id,int Genre_id,int Publication_id);/////////блiн.
+    Boolean existsByAuthorNameAndGenreNameAndPublicationName(String AuthorName,String GenreName,String PublicationName);/////////блiн.
 
     List<Product> findAllById(int id);
     List<Product> findAllByTitle(String Title);
-    List<Product> findAllByAuthorId(int Author_id);
-    List<Product> findAllByGenreId(int Genre_id);
-    List<Product> findAllByPublicationId(int Publication_id);
+
     List<Product> findAllByDescription(String Description);
+    List<Product> findAllByAuthorName(String AuthorName);
+    List<Product> findAllByGenreName(String GenreName);
+    List<Product> findAllByPublicationName(String PublicationName);
     List<Product> findAllByPrice(int Price);
     List<Product> findAllByAmount(int Amount);
-    List<Product> findAllByIMGPath(String IMG_path);
-
 
     void deleteById(int id);
     void deleteByTitle(String Title);
-    void deleteByAuthorId(int Author_id);
-    void deleteByGenreId(int Genre_id);
-    void deleteByPublicationId(int Publication_id);
     void deleteByDescription(String Description);
+    void deleteByAuthorName(String AuthorName);
+    void deleteByPublicationName(String PublicationName);
+    void deleteByGenreName(String GenreName);
     void deleteByPrice(int Price);
     void deleteByAmount(int Amount);
-    void deleteByIMGPath(String IMG_path);
-*/
+
 }
 

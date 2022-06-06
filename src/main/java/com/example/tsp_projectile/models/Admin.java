@@ -4,7 +4,8 @@ import java.util.Date;
 @Entity
 @Table(name = "admins")
 public class Admin{
-
+    //баг с созданием таблицы.
+    //не не баг просто новое DefaultNamingStrategy ,kznm.
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -111,7 +112,7 @@ public class Admin{
 
     @Override
     public String toString(){
-        return "models.models.Admin{"+"id="+id +", Admin_name=' " + name + '\'' + ", Birthday_date=" + birthdayDate + '\'' + ", login=" + login + '\'' + ", Admin_password=" + adminPassword + '\'' + ", Phone=" + phone + '\'' + ", Post_in_company=" + postInCompany + '\'' + ", Is_deleted=" + isDeleted + '}';
+        return "models.models.Admin{"+"id="+id +", name=' " + name + '\'' + ", birthdayDate=" + birthdayDate + '\'' + ", login=" + login + '\'' + ", adminPassword=" + adminPassword + '\'' + ", phone=" + phone + '\'' + ", postInCompany=" + postInCompany + '\'' + ", isDeleted=" + isDeleted + '}';
     }
 
 }
