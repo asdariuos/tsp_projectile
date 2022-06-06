@@ -7,8 +7,8 @@ public class Genre {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String Genre_name;
-    private boolean Is_deleted;
+    private String genreName;
+    private boolean isDeleted;
     public Genre(){}
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -20,33 +20,33 @@ public class Genre {
         this.product = product;
     }
 
-    public Genre(String Genre_name)
+    public Genre(String genreName)
     {
-        this.Genre_name=Genre_name;
-        this.Is_deleted=false;
+        this.genreName = genreName;
+        this.isDeleted =false;
     }
     public void setId(int id) {
         this.id = id;
     }
     public int getId() {return id;}
-    public String getGenre_name() {
-        return Genre_name;
+    public String getGenreName() {
+        return genreName;
     }
 
-    public void setGenre_name(String genre_name) {
-        Genre_name = genre_name;
+    public void setGenreName(String genreName) {
+        this.genreName = genreName;
     }
 
-    public boolean isIs_deleted() {
-        return Is_deleted;
+    public boolean isDeleted() {
+        return isDeleted;
     }
 
-    public void setIs_deleted(boolean is_deleted) {
-        Is_deleted = is_deleted;
+    public void setDeleted(boolean deleted) {
+        isDeleted = deleted;
     }
     @Override
     public String toString(){
-        return "models.genres{"+"id="+id +", Genre_name=' " + Genre_name + '\'' + ", Is_deleted=" + Is_deleted + '}';
+        return "models.genres{"+"id="+id +", Genre_name=' " + genreName + '\'' + ", Is_deleted=" + isDeleted + '}';
     }
 
 }

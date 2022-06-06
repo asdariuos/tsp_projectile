@@ -10,17 +10,17 @@ public class Product {
      @GeneratedValue(strategy = GenerationType.IDENTITY)
 
      @Column(name = "id")
-    private int Product_id;
-    private String Title;
-    private int Author_id;
-    private int Genre_id;
-    private int Publication_id;
-    private String Description;
-    private int Price;
-    private int Amount;
+    private int productId;
+    private String title;
+    private int authorId;
+    private int genreId;
+    private int publicationId;
+    private String description;
+    private int price;
+    private int amount;
 
-    private String IMG_path;
-    private boolean Is_deleted;
+    private String imgPath;
+    private boolean isDeleted;
 
     /*
     @OneToOne(cascade = CascadeType.ALL)
@@ -64,16 +64,16 @@ public class Product {
         this.order = order;
     }
 
-    public Product(String Title, int Author_id, int Genre_id, int Publication_id, String Description, int Price, int Amount,String IMG_path) {
-        this.Title = Title;
-        this.Author_id = Author_id;
-        this.Genre_id = Genre_id;
-        this.Publication_id = Publication_id;
-        this.Description = Description;
-        this.Price = Price;
-        this.Amount = Amount;
-        this.IMG_path = IMG_path;
-        this.Is_deleted = false;
+    public Product(String title, int authorId, int genreId, int publicationId, String description, int price, int amount, String imgPath) {
+        this.title = title;
+        this.authorId = authorId;
+        this.genreId = genreId;
+        this.publicationId = publicationId;
+        this.description = description;
+        this.price = price;
+        this.amount = amount;
+        this.imgPath = imgPath;
+        this.isDeleted = false;
     }
 
     public Product() {
@@ -81,86 +81,86 @@ public class Product {
     }
 
     public int getId(){
-        return Product_id;
+        return productId;
     }
     public void setId(int Product_id) {
-        this.Product_id = Product_id;
+        this.productId = Product_id;
     }
     public String getTitle(){
-        return Title;
+        return title;
     }
 
 
     public void setTitle(String Title){
-        this.Title=Title;
+        this.title =Title;
     }
 
 
-    public int getAuthor_id(){
-        return Author_id;
+    public int getAuthorId(){
+        return authorId;
     }
 
 
-    public void setAuthor_id(int Author_id){
-        this.Author_id=Author_id;
+    public void setAuthorId(int authorId){
+        this.authorId =authorId;
     }
 
-    public int getGenre_id(){
-        return Genre_id;
+    public int getGenreId(){
+        return genreId;
     }
 
-    public void setGenre_id(int Genre_id){
-        this.Genre_id=Genre_id;
+    public void setGenreId(int genreId){
+        this.genreId =genreId;
     }
 
-    public int getPublication_id(){
-        return Publication_id;
+    public int getPublicationId(){
+        return publicationId;
     }
 
-    public void setPublication_id(int Publication_id){
-        this.Publication_id=Publication_id;
+    public void setPublicationId(int publicationId){
+        this.publicationId =publicationId;
     }
 
 
     public String getDescription(){
-        return this.Description;
+        return this.description;
     }
 
-    public void setDescription(String Description){
-        this.Description=Description;
+    public void setDescription(String description){
+        this.description = description;
     }
 
     public int getPrice(){
-        return Price;
+        return price;
     }
 
-    public void setPrice(int Price){
-        this.Price=Price;
+    public void setPrice(int price){
+        this.price =price;
     }
 
 
     public int getAmount(){
-        return Price;
+        return price;
     }
 
-    public void setAmount(int Amount){
-        this.Amount=Amount;
+    public void setAmount(int amount){
+        this.amount = amount;
     }
-    public String  getIMG_path(){return  IMG_path;}
-    public void setIMG_path(String IMG_path){this.IMG_path=IMG_path;}
-    public boolean getIs_deleted(){
-        return Is_deleted;
+    public String getImgPath(){return imgPath;}
+    public void setImgPath(String imgPath){this.imgPath =imgPath;}
+    public boolean getDeleted(){
+        return isDeleted;
     }
 
 
-    public void setIs_deleted(boolean Is_deleted){
-        this.Is_deleted=Is_deleted;
+    public void setDeleted(boolean isDeleted){
+        this.isDeleted =isDeleted;
     }
 
 
     @Override
     public String toString(){
-        return "models.models.Product{"+"id="+Product_id +", Title=' " + Title + '\'' + ", Author_id=" + Author_id + '\'' + ", Genre_id=" + Genre_id  + '\'' + ", Publication_id=" + Publication_id  + '\'' + ", Description=" + Description  + '\'' + ", Price=" + Price  + '\'' + ", Amount=" + Amount  + '\'' + ", Is_deleted=" + Is_deleted + '}';
+        return "models.models.Product{"+"id="+ productId +", Title=' " + title + '\'' + ", Author_id=" + authorId + '\'' + ", Genre_id=" + genreId + '\'' + ", Publication_id=" + publicationId + '\'' + ", Description=" + description + '\'' + ", Price=" + price + '\'' + ", Amount=" + amount + '\'' + ", Is_deleted=" + isDeleted + '}';
     }
 
 

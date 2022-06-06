@@ -8,8 +8,8 @@ public class Publication {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String Publication_name;
-    private boolean Is_deleted;
+    private String publicationName;
+    private boolean isDeleted;
 
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -23,10 +23,10 @@ public class Publication {
     }
 
 
-    public Publication(String Publication_name)
+    public Publication(String publicationName)
     {
-        this.Publication_name=Publication_name;
-        this.Is_deleted=false;
+        this.publicationName = publicationName;
+        this.isDeleted =false;
     }
 
     public Publication() {
@@ -41,25 +41,25 @@ public class Publication {
 
 
     public String Publication_name(){
-        return Publication_name;
+        return publicationName;
     }
 
 
-    public void setPublication_name(String Publication_name){
-        this.Publication_name=Publication_name;
+    public void setPublicationName(String publicationName){
+        this.publicationName = publicationName;
     }
 
-    public boolean getIs_deleted(){
-        return Is_deleted;
+    public boolean getDeleted(){
+        return isDeleted;
     }
 
 
-    public void setIs_deleted(boolean Is_deleted){
-        this.Is_deleted=Is_deleted;
+    public void setDeleted(boolean isDeleted){
+        this.isDeleted =isDeleted;
     }
 
     @Override
     public String toString(){
-        return "models.Publication{"+"id="+id +", Publication_name=' " + Publication_name + '\'' + ", Is_deleted=" + Is_deleted + '}';
+        return "models.Publication{"+"id="+id +", Publication_name=' " + publicationName + '\'' + ", Is_deleted=" + isDeleted + '}';
     }
 }

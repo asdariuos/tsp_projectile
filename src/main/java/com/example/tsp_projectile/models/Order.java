@@ -1,21 +1,17 @@
 package com.example.tsp_projectile.models;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
-
 @Entity
 @Table(name="orders")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idOrder_N;
-    private int Client_id;
-    private int Price;
-    private String Order_status;
-    private Date Order_date;
-    private boolean Is_deleted;
+    private int idOrderN;
+    private int price;
+    private String orderStatus;
+    private Date orderDate;
+    private boolean isDeleted;
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Client client;
@@ -28,72 +24,71 @@ public class Order {
         this.client=client;
     }
 
-    public Order(int Client_id, int Price, String Order_status, Date Order_date) {
-        this.Client_id = Client_id;
-        this.Price = Price;
-        this.Order_status = Order_status;
-        this.Order_date = Order_date;
-        this.Is_deleted = false;
+    public Order(int Price, String orderStatus, Date orderDate) {
+        this.price = Price;
+        this.orderStatus = orderStatus;
+        this.orderDate = orderDate;
+        this.isDeleted = false;
     }
 
     public Order(){
 
     }
-    public void setIdOrder_N(int idOrder_N) {
-        this.idOrder_N = idOrder_N;
+    public void setIdOrderN(int idOrder_N) {
+        this.idOrderN = idOrder_N;
     }
-    public int getIdOrder_N(){
-        return idOrder_N;
+    public int getIdOrderN(){
+        return idOrderN;
     }
 
-    public int getClient_id(){
+   /* public int getClient_id(){
         return Client_id;
-    }
+    }*/
 
-    public void setClient_id(int Client_id){
+   /* public void setClient_id(int Client_id){
         this.Client_id=Client_id;
-    }
+    }*/
 
     public int getPrice(){
-        return Price;
+        return price;
     }
 
     public void setPrice(int Price){
-        this.Price=Price;
+        this.price =Price;
     }
 
-    public String getOrder_status(){
-        return Order_status;
+    public String getOrderStatus(){
+        return orderStatus;
     }
 
-    public void setOrder_status(String Order_status){
-        this.Order_status=Order_status;
+    public void setOrderStatus(String orderStatus){
+        this.orderStatus = orderStatus;
     }
 
-    public void setOrder_date(Date Order_date){
-        this.Order_date=Order_date;
+    public void setOrderDate(Date orderDate){
+        this.orderDate =orderDate;
     }
 
-    public java.sql.Date getOrder_date(){
+    public java.sql.Date getOrderDate(){
 
-        java.sql.Date sqlDate = new java.sql.Date(Order_date.getTime());
+        java.sql.Date sqlDate = new java.sql.Date(orderDate.getTime());
         return  sqlDate;
         //возможна утечка думаю.
 
     }
 
-    public boolean getIs_deleted(){
-        return Is_deleted;
+    public boolean getDeleted(){
+        return isDeleted;
     }
 
 
-    public void setIs_deleted(boolean Is_deleted){
-        this.Is_deleted=Is_deleted;
+    public void setDeleted(boolean isDeleted){
+        this.isDeleted =isDeleted;
     }
 
     @Override
     public String toString(){
-        return "models.Order{"+"idOrder_N="+idOrder_N +", Client_id=' " + Client_id + '\'' + ", Price=" + Price + '\'' + ", Order_status=" + Order_status  + '\'' + ", Order_date=" + Order_date  + '\'' + ", Is_deleted=" + Is_deleted + '}';
+        return "models.Order{"+"idOrder_N="+ idOrderN + '\'' + ", Price=" + price + '\'' + ", Order_status=" + orderStatus + '\'' + ", Order_date=" + orderDate + '\'' + ", Is_deleted=" + isDeleted + '}';
     }
 
 }

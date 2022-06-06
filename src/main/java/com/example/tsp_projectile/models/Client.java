@@ -1,10 +1,7 @@
 package com.example.tsp_projectile.models;
 
-import org.aspectj.weaver.ast.Or;
-
 import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
 
 @Entity
 @Table (name = "clients")
@@ -14,13 +11,13 @@ public class Client {
 
     private int id;
 
-    private String Client_name;
-    private Date Birthday_date;
-    private String Login;
-    private String Client_password;
-    private String Phone;
-    private String Address;
-    private boolean Is_deleted;
+    private String clientName;
+    private Date birthdayDate;
+    private String login;
+    private String clientPassword;
+    private String phone;
+    private String address;
+    private boolean isDeleted;
     /*@OneToMany(cascade = CascadeType.ALL,mappedBy ="Client_id")
     private List<Order> orders;
     public List<Order> getOrders(){
@@ -30,14 +27,14 @@ public class Client {
         this.orders=orders;
     }
      */
-    public Client(String name, Date Birthday_date, String Login, String Client_password, String Phone, String Address) {
-        this.Client_name = name;
-        this.Birthday_date = Birthday_date;
-        this.Login = Login;
-        this.Client_password = Client_password;
-        this.Phone = Phone;
-        this.Address = Address;
-        this.Is_deleted = false;
+    public Client(String name, Date birthdayDate, String Login, String clientPassword, String Phone, String Address) {
+        this.clientName = name;
+        this.birthdayDate = birthdayDate;
+        this.login = Login;
+        this.clientPassword = clientPassword;
+        this.phone = Phone;
+        this.address = Address;
+        this.isDeleted = false;
 
     }
 
@@ -55,72 +52,72 @@ public class Client {
 
 
     public String getName(){
-        return Client_name;
+        return clientName;
     }
 
 
     public void setName(String name){
-        this.Client_name=name;
+        this.clientName =name;
     }
 
 
-    public Date getBirthday_date(){
-        return Birthday_date;
+    public Date getBirthdayDate(){
+        return birthdayDate;
     }
 
 
-    public void setBirthday_date(Date Birthday_date){
-        this.Birthday_date=Birthday_date;
+    public void setBirthdayDate(Date Birthday_date){
+        this.birthdayDate =Birthday_date;
     }
 
 
     public String getLogin() {
-        return Login;
+        return login;
     }
 
 
     public void setLogin(String Login){
-        this.Login=Login;
+        this.login =Login;
     }
 
 
-    public String getClient_password(){
-        return Client_password;
+    public String getClientPassword(){
+        return clientPassword;
     }
 
 
-    public void setClient_password(String Client_password){
-        this.Client_password=Client_password;
+    public void setClientPassword(String Client_password){
+        this.clientPassword =Client_password;
     }
 
 
     public String getPhone(){
-        return Phone;
+        return phone;
     }
 
 
     public void setPhone(String Phone){
-        this.Phone=Phone;
+        this.phone =Phone;
     }
 
 
     public String getAddress(){
-        return Address;
+        return address;
     }
 
 
     public void setAddress(String Address){
-        this.Address=Address;
+        this.address =Address;
     }
 
 
-    public boolean getIs_deleted(){
-        return Is_deleted;
+    public boolean getDeleted(){
+        return isDeleted;
     }
 
 
-    public void setIs_deleted(boolean Is_deleted){
-        this.Is_deleted=Is_deleted;
+    public void setDeleted(boolean Is_deleted){
+        this.isDeleted =Is_deleted;
     }
 
 
@@ -139,7 +136,7 @@ public class Client {
 
     @Override
     public String toString(){
-        return "models.models.Client{"+"id="+id +", Client_name=' " + Client_name + '\'' + ", Birthday_date=" + Birthday_date + '\'' + ", login=" + Login  + '\'' + ", Client_password=" + Client_password  + '\'' + ", Phone=" + Phone  + '\'' + ", Address=" + Address  + '\'' + ", Is_deleted=" + Is_deleted + '}';
+        return "models.models.Client{"+"id="+id +", Client_name=' " + clientName + '\'' + ", Birthday_date=" + birthdayDate + '\'' + ", login=" + login + '\'' + ", Client_password=" + clientPassword + '\'' + ", Phone=" + phone + '\'' + ", Address=" + address + '\'' + ", Is_deleted=" + isDeleted + '}';
     }
 
 }

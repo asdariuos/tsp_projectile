@@ -14,7 +14,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Controller
 public class MainController {
-
+/*
     @Autowired
     private AdminRepo adminRepository;
 
@@ -32,13 +32,13 @@ public class MainController {
 
     @Autowired
     private PublicationRepo publicationRepository;
-
+*/
 
     @GetMapping("/greeting")
     public String greeting(@RequestParam(name="name", required=false, defaultValue="Stranger") String name, Model model) {
         model.addAttribute("name", name);
-        Iterable<Admin> admin = adminRepository.findAll();
-        model.addAttribute("admins", admin);
+       /* Iterable<Admin> admin = adminRepository.findAll();
+        model.addAttribute("admins", admin);*/
 
         return "greeting";
     }

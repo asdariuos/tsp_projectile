@@ -5,28 +5,28 @@ import java.util.Date;
 @Table(name = "admins")
 public class Admin{
 
-     @Id
-     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(name = "Admin_name")
+    @Column(name = "name")
     private String name;
     //Можно не указывать Column name если совпадает с таблицей.
-    private Date Birthday_date;
-    private String Login;
-    private String Admin_password;
-    private String Phone;
-    private String Post_in_company;
-    private boolean Is_deleted;
+    private Date birthdayDate;
+    private String login;
+    private String adminPassword;
+    private String phone;
+    private String postInCompany;
+    private boolean isDeleted;
 
 
-    public Admin(String name, Date Birthday_date, String Login, String Admin_password,String Phone,String Post_in_company){
+    public Admin(String name, Date birthdayDate, String login, String adminPassword, String Phone, String postInCompany){
         this.name=name;
-        this.Birthday_date= Birthday_date;
-        this.Login=Login;
-        this.Admin_password=Admin_password;
-        this.Phone=Phone;
-        this.Post_in_company=Post_in_company;
-        this.Is_deleted=false;
+        this.birthdayDate = birthdayDate;
+        this.login =login;
+        this.adminPassword = adminPassword;
+        this.phone =Phone;
+        this.postInCompany = postInCompany;
+        this.isDeleted =false;
     }
 
     public Admin() {
@@ -51,67 +51,67 @@ public class Admin{
     }
 
 
-    public Date getBirthday_date(){
-        return Birthday_date;
+    public Date getBirthdayDate(){
+        return birthdayDate;
     }
 
 
-    public void setBirthday_date(Date Birthday_date){
-        this.Birthday_date=Birthday_date;
+    public void setBirthdayDate(Date birthdayDate){
+        this.birthdayDate =birthdayDate;
     }
 
 
     public String getLogin() {
-        return Login;
+        return login;
     }
 
 
-    public void setLogin(String Login){
-        this.Login=Login;
+    public void setLogin(String login){
+        this.login =login;
     }
 
 
-    public String getAdmin_password(){
-        return Admin_password;
+    public String getAdminPassword(){
+        return adminPassword;
     }
 
 
-    public void setAdmin_password(String Admin_password){
-        this.Admin_password=Admin_password;
+    public void setAdminPassword(String adminPassword){
+        this.adminPassword =adminPassword;
     }
 
 
     public String getPhone(){
-        return Phone;
+        return phone;
     }
 
 
-    public void setPhone(String Phone){
-        this.Phone=Phone;
+    public void setPhone(String phone){
+        this.phone =phone;
     }
 
 
-    public String getPost_in_company(){
-        return Post_in_company;
+    public String getPostInCompany(){
+        return postInCompany;
     }
 
 
-    public void setPost_in_company(String Post_in_company){
-        this.Post_in_company=Post_in_company;
+    public void setPostInCompany(String postInCompany){
+        this.postInCompany = postInCompany;
     }
 
-    public boolean getIs_deleted(){
-        return Is_deleted;
+    public boolean getDeleted(){
+        return isDeleted;
     }
 
 
-    public void setIs_deleted(boolean Is_deleted){
-        this.Is_deleted=Is_deleted;
+    public void setDeleted(boolean isDeleted){
+        this.isDeleted =isDeleted;
     }
 
     @Override
     public String toString(){
-        return "models.models.Admin{"+"id="+id +", Admin_name=' " + name + '\'' + ", Birthday_date=" + Birthday_date + '\'' + ", login=" + Login  + '\'' + ", Admin_password=" + Admin_password  + '\'' + ", Phone=" + Phone  + '\'' + ", Post_in_company=" + Post_in_company  + '\'' + ", Is_deleted=" + Is_deleted + '}';
+        return "models.models.Admin{"+"id="+id +", Admin_name=' " + name + '\'' + ", Birthday_date=" + birthdayDate + '\'' + ", login=" + login + '\'' + ", Admin_password=" + adminPassword + '\'' + ", Phone=" + phone + '\'' + ", Post_in_company=" + postInCompany + '\'' + ", Is_deleted=" + isDeleted + '}';
     }
 
 }

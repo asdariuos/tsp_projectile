@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class AdminMenuController {
-    private ClientRepo clientRepo;
+    /*private ClientRepo clientRepo;
     private OrderRepo orderRepo;
     private ProductRepo productRepo;
 
@@ -67,27 +67,10 @@ public class AdminMenuController {
         Publication publication = new Publication();
         if (productRepo.existsByAuthor_idAndGenre_idAndPublication_id(Author_id,Genre_id,Publication_id))
             return "admin/addproduct";
-            /*
-        if (productRepo.existsByAuthor_idAndGenre_idAndPublication_id(Author_id,Genre_id,Publication_id))
-            return "admin/addproduct";
-        else
-        if (productRepo.existsBy(promoName))
-            product.setPromo(promoRepository.findByName(promoName));
-        else
-            return "admin/addproduct";
-        if (categoryRepository.existsByName(categoryName))
-            product.setCategory(categoryRepository.findByName(categoryName));
-        else
-            return "admin/addproduct";
-        product.setName(name);
-        product.setDeleted(false);
-        product.setDescription(description);
-        product.setPrice(price);
-        product.setQuantity(quantity);
-        productRepository.save(product);
+
         return "admin/addproduct";
-  */
-        return "admin/addproduct";
+
+
     }
 
 
@@ -98,5 +81,5 @@ public class AdminMenuController {
 
 
 
-
+  */
 }

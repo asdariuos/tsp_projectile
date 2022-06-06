@@ -8,12 +8,12 @@ public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String Author_name;
-    private boolean Is_deleted;
-    public Author (String Author_name)
+    private String authorName;
+    private boolean isDeleted;
+    public Author (String authorName)
     {
-        this.Author_name=Author_name;
-        this.Is_deleted=false;
+        this.authorName = authorName;
+        this.isDeleted =false;
     }
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -37,27 +37,27 @@ public class Author {
     }
 
 
-    public String getAuthor_name(){
-        return Author_name;
+    public String getAuthorName(){
+        return authorName;
     }
 
 
-    public void setAuthor_name(String Author_name){
-        this.Author_name=Author_name;
+    public void setAuthorName(String authorName){
+        this.authorName =authorName;
     }
 
-    public boolean getIs_deleted(){
-        return Is_deleted;
+    public boolean getDeleted(){
+        return isDeleted;
     }
 
 
-    public void setIs_deleted(boolean Is_deleted){
-        this.Is_deleted=Is_deleted;
+    public void setDeleted(boolean isDeleted){
+        this.isDeleted =isDeleted;
     }
 
     @Override
     public String toString(){
-        return "models.Author{"+"id="+id +", Author_name=' " + Author_name + '\'' + ", Is_deleted=" + Is_deleted + '}';
+        return "models.Author{"+"id="+id +", Author_name=' " + authorName + '\'' + ", isDeleted=" + isDeleted + '}';
     }
 
 
