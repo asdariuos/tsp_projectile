@@ -14,7 +14,7 @@ public interface OrderRepo extends CrudRepository<Order, Integer> {
     Order findById(int Id);
     Order findByPrice(int Price);
     Order findByOrderStatus(String Order_status);
-    Order findByOrderDate(Date Order_date);
+   // Order findByOrderDate(Date Order_date);
 
 
     Boolean existsById(int Id);
@@ -24,12 +24,12 @@ public interface OrderRepo extends CrudRepository<Order, Integer> {
     List<Order> findAllById(int Id);
     List<Order> findAllByPrice(int Price);
     List<Order> findAllByOrderStatus(String Order_status);//+
-    List<Order> findAllByOrderDate(Date Order_date);
+   //'' List<Order> findAllByOrderDate(Date Order_date);
 
     void deleteById(int Id);
     void deleteByPrice(int Price);
     void deleteByOrderStatus(String Order_status);
-    void deleteByOrderDate(Date Order_date);
+   // void deleteByOrderDate(Date Order_date);
 
 
 
