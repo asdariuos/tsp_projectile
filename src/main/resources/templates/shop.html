@@ -2,87 +2,84 @@
 <html>
 <head>
     <meta charset = "utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
     <title>
         Магазин
     </title>
-    <link rel = "stylesheet" type = "text/css" href = "main.css">
+    <link rel = "stylesheet" type = "text/css" href = "main_2.css">
 </head>
 <body>
-<ul class = "menu">
-    <li><a href = "shop.html" >Каталог</a></li>
-    <li><a href = "orders.html">Заказы</a></li>
-</ul>
-<div class="product-wrap">
-  		<span class="product-item">
-    		<img src="prestuplenie_i_nakazanie.png">
-    		<span class="product-buttons">
-      			<a href="" class="button">В корзину</a>
-    		</span>
-  		</span>
-    <div class="product-title">
-        <a href="">Ф.М. Достоевский "Преступление и наказание"</a>
-        <span class="product-price">₽199</span>
+<!-- // cart-item__details --<ul class = "menu">
+  <li><a href = "shop.html">Каталог</a></li>
+  <li><a href = "cart.html">Корзина</a></li>
+</ul><!- // cart-item__details -->
+<div class="container mb-5">
+    <div class="row">
+
+        <!-- Товары -->
+        <div class="col-md-8">
+            <div class="row" id="products-container">
+
+            </div>
+        </div>
+
+        <!-- Корзина -->
+        <div class="col-md-4">
+
+            <!-- Корзина -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Ваш заказ</h5>
+
+                        <div data-cart-empty class="alert alert-secondary" role="alert">
+                            Корзина пуста
+                        </div>
+
+                        <!-- cart-wrapper -->
+                        <div class="cart-wrapper">
+
+                        </div>
+                        <!-- // cart-wrapper -->
+
+                        <!-- Стоимость заказа -->
+                        <div class="cart-total">
+                            <p><span class="h5">Итого:</span>
+                                <span class="total-price">0</span>
+                                <span class="rouble">₽</span></p>
+                        </div>
+                        <!-- // Стоимость заказа -->
+
+                </div>
+
+                <!-- Оформить заказ -->
+                <div id="order-form" class="card-body border-top none">
+                    <h5 class="card-title">Оформить заказ</h5>
+                        <form>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Ваш номер телефона">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Ваше ФИО">
+                            </div>
+                            <button type="submit" class="button-shop" onclick="alert('Ваш заказ принят в работу!')">Заказать</button>
+                        </form>
+                </div>
+                <!-- // Оформить заказ -->
+
+            </div>
+            <!-- // Корзина -->
+
+        </div>
+
     </div>
 </div>
-<div class="product-wrap">
-      <span class="product-item">
-        <img src="evgeniy_onegin.png">
-        <span class="product-buttons">
-            <a href="" class="button">В корзину</a>
-        </span>
-      </span>
-    <div class="product-title">
-        <a href="">А.С. Пушкин "Евгений Онегин"</a>
-        <span class="product-price">₽209</span>
-    </div>
-</div>
-<div class="product-wrap">
-      <span class="product-item">
-        <img src="doctor_zhivago.png">
-        <span class="product-buttons">
-            <a href="" class="button">В корзину</a>
-        </span>
-      </span>
-    <div class="product-title">
-        <a href="">Б.Л. Пастернак "Доктор Живаго"</a>
-        <span class="product-price">₽193</span>
-    </div>
-</div>
-<div class="product-wrap">
-      <span class="product-item">
-        <img src="desyat_negrityat.png">
-        <span class="product-buttons">
-            <a href="" class="button">В корзину</a>
-        </span>
-      </span>
-    <div class="product-title">
-        <a href="">Агата Кристи "Десять негритят"</a>
-        <span class="product-price">₽198</span>
-    </div>
-</div>
-<div class="product-wrap">
-      <span class="product-item">
-        <img src="tri_tovarisha.png">
-        <span class="product-buttons">
-            <a href="" class="button">В корзину</a>
-        </span>
-      </span>
-    <div class="product-title">
-        <a href="">Эрих Мария Ремарк "Три товарища"</a>
-        <span class="product-price">₽218</span>
-    </div>
-</div>
-<div class="product-wrap">
-      <span class="product-item">
-        <img src="miliy_drug.png">
-        <span class="product-buttons">
-            <a href="" class="button">В корзину</a>
-        </span>
-      </span>
-    <div class="product-title">
-        <a href="">Ги де Мопассан "Милый друг"</a>
-        <span class="product-price">₽229</span>
-    </div>
-</div>
+
+<script src="renderProducts.js"></script>
+<script src="calcCartPrice.js"></script>
+<script src="toggleCartStatus.js"></script>
+<script src="counter.js"></script>
+<script src="cart.js"></script>
+
 </body>
 </html>

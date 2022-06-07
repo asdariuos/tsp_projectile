@@ -20,6 +20,7 @@ public interface OrderRepo extends CrudRepository<Order, Integer> {
     Boolean existsById(int Id);
 
 
+    List<Order> findAll();
     List<Order> findAllById(int Id);
     List<Order> findAllByPrice(int Price);
     List<Order> findAllByOrderStatus(String Order_status);//+

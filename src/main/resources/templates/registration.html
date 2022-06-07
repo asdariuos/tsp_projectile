@@ -8,44 +8,39 @@
 <body>
 <div class = "container">
   <section>
-    <form>
+    <form id = "send" method = "post" action="/list">
       <label>
-        <input name = "name" type = "text">
+        <input name = "clientName" type = "text" form = "send">
         <div class = "label-text">
           Введите ФИО
         </div>
       </label>
       <label>
-        <input name = "phone" type = "text">
+        <input name = "phone" type = "text" form = "send">
         <div class = "label-text">
           Введите номер телефона
         </div>
       </label>
       <label>
-        <input name = "address" type = "text">
+        <input name = "address" type = "text" form = "send">
         <div class = "label-text">
           Введите адрес
         </div>
       </label>
+
       <label>
-        <input name = "date" type = "text">
-        <div class = "label-text">
-          Введите дату рождения (ДД.ММ.ГГГГ)
-        </div>
-      </label>
-      <label>
-        <input name = "login" type = "text">
+        <input name = "login" type = "text" form = "send">
         <div class = "label-text">
           Придумайте логин
         </div>
       </label>
       <label>
-        <input type = "password" name = "password" id = "password">
+        <input type = "password" name = "clientPassword" id = "password" form = "send">
         <div class = "label-text">
           Придумайте пароль
         </div>
       </label>
-      <button type = "submit" value = "submit" class = "buttons" formaction="shop.html">
+      <button type="submit" class = "buttons" href="/list">
         Зарегистрироваться
       </button>
     </form>

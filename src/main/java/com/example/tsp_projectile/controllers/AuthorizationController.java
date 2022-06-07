@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Date;
+
 public class AuthorizationController {
     @Autowired
     private ClientRepo clientRepo;
@@ -22,23 +24,28 @@ public class AuthorizationController {
     @PostMapping(value = "/authorization")
     public String checkUser(Model model,
                             @RequestParam(name = "login") String login,
-                            @RequestParam(name = "password") String password)
+                            @RequestParam(name = "password") String password,
+                            @RequestParam(name = "client_name") String clientName,
+                            @RequestParam(name = "client_password") String clientPassword,
+                            @RequestParam(name = "phone") String phone,
+                            @RequestParam(name = "address") String address,
+                            @RequestParam(name = "birthday_date")Date birthdayDate)
     {
         Client client = new Client();
         Admin admin = new Admin();
-        if(login.equals("admin"))
+        /*if(login.equals("admin"))
             if(password.equals("1111"))
-                return "redirect:/adminmenu";
+                return "redirect:/admin_mode";
             else{
                 if(clientRepo.existsByLogin(login))
                     client = clientRepo.findByLogin(login);
                 else
-                    return "/authorization";
+                    return "/greeting";
                 if (client.getClientPassword().equals(password)){
-                    return "redirect:/clientmenu?id="+client.getId();
+                    return "redirect:/shop";
                 }else
-                    return "/authorization";
-            }
-        return "/authorization";
+                    return "/greeting";
+            }*/
+        return "/greeting";
     }
 }

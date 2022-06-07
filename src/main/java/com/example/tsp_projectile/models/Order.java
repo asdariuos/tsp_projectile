@@ -10,7 +10,6 @@ public class Order {
     private int id;
     private int price;
     private String orderStatus;
-    private Date orderDate;
     private boolean isDeleted;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -24,10 +23,9 @@ public class Order {
         this.client=client;
     }
 
-    public Order(int Price, String orderStatus, Date orderDate) {
+    public Order(int Price, String orderStatus) {
         this.price = Price;
         this.orderStatus = orderStatus;
-        this.orderDate = orderDate;
         this.isDeleted = false;
     }
 
@@ -65,17 +63,7 @@ public class Order {
         this.orderStatus = orderStatus;
     }
 
-    public void setOrderDate(Date orderDate){
-        this.orderDate =orderDate;
-    }
 
-    public java.sql.Date getOrderDate(){
-
-        java.sql.Date sqlDate = new java.sql.Date(orderDate.getTime());
-        return  sqlDate;
-        //возможна утечка думаю.
-
-    }
 
     public boolean getDeleted(){
         return isDeleted;
@@ -88,7 +76,7 @@ public class Order {
 
     @Override
     public String toString(){
-        return "models.Order{"+"idOrder_N="+ id + '\'' + ", Price=" + price + '\'' + ", Order_status=" + orderStatus + '\'' + ", Order_date=" + orderDate + '\'' + ", Is_deleted=" + isDeleted + '}';
+        return "models.Order{"+"idOrder_N="+ id + '\'' + ", Price=" + price + '\'' + ", Order_status=" + orderStatus + '\'' +  '\'' + ", Is_deleted=" + isDeleted + '}';
     }
 
 }

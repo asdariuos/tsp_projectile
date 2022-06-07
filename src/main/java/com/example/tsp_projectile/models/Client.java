@@ -12,7 +12,7 @@ public class Client {
     private int id;
 
     private String clientName;
-    private Date birthdayDate;
+    //private Date birthdayDate;
     private String login;
     private String clientPassword;
     private String phone;
@@ -27,9 +27,9 @@ public class Client {
         this.orders=orders;
     }
      */
-    public Client(String name, Date birthdayDate, String Login, String clientPassword, String Phone, String Address) {
+    public Client(String name, String Login, String clientPassword, String Phone, String Address) {
         this.clientName = name;
-        this.birthdayDate = birthdayDate;
+        //this.birthdayDate = birthdayDate;
         this.login = Login;
         this.clientPassword = clientPassword;
         this.phone = Phone;
@@ -38,9 +38,7 @@ public class Client {
 
     }
 
-    public  Client(){
-
-    }
+    public  Client(){}
 
 
     public void setId(int id) {
@@ -61,14 +59,14 @@ public class Client {
     }
 
 
-    public Date getBirthdayDate(){
-        return birthdayDate;
-    }
+    //public Date getBirthdayDate(){
+     //   return birthdayDate;
+    //}
 
 
-    public void setBirthdayDate(Date Birthday_date){
-        this.birthdayDate =Birthday_date;
-    }
+    //public void setBirthdayDate(Date Birthday_date){
+      //  this.birthdayDate =Birthday_date;
+    //}
 
 
     public String getLogin() {
@@ -136,7 +134,7 @@ public class Client {
 
     @Override
     public String toString(){
-        return "models.models.Client{"+"id="+id +", Client_name=' " + clientName + '\'' + ", Birthday_date=" + birthdayDate + '\'' + ", login=" + login + '\'' + ", Client_password=" + clientPassword + '\'' + ", Phone=" + phone + '\'' + ", Address=" + address + '\'' + ", Is_deleted=" + isDeleted + '}';
+        return "models.models.Client{"+"id="+id +", Client_name=' " + clientName + '\'' +  '\'' + ", login=" + login + '\'' + ", Client_password=" + clientPassword + '\'' + ", Phone=" + phone + '\'' + ", Address=" + address + '\'' + ", Is_deleted=" + isDeleted + '}';
     }
 
 }

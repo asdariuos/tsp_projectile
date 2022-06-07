@@ -36,6 +36,7 @@ public interface ProductRepo extends CrudRepository<Product, Integer> {
     List<Product> findAllByPublicationName(String PublicationName);
     List<Product> findAllByPrice(int Price);
     List<Product> findAllByAmount(int Amount);
+    List<Product> findAll();
 
     void deleteById(int id);
     void deleteByTitle(String Title);
