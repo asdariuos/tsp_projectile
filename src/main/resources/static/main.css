@@ -36,7 +36,30 @@ label .label-text {
     transition: all 0.3s;
 }
 
+.clients {
+    color: #ffffff;
+    cursor: text;
+    font-size: 15px;
+    line-height: 20px;
+    transform: translateY(-35px);
+    transition: all 0.3s;
+}
+
 label input {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px solid #c0a97a;
+    color: white;
+    font-size: 20px;
+    outline: 0;
+    letter-spacing: 1px;
+    padding: 5px 20px;
+    text-align: center;
+    transition: all 0.3s;
+    width: 200px;
+}
+
+.p-clients {
     background-color: transparent;
     border: 0;
     border-bottom: 2px solid #c0a97a;

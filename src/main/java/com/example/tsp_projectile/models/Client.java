@@ -134,7 +134,8 @@ public class Client {
 
     @Override
     public String toString(){
-        return "models.models.Client{"+"id="+id +", Client_name=' " + clientName + '\'' +  '\'' + ", login=" + login + '\'' + ", Client_password=" + clientPassword + '\'' + ", Phone=" + phone + '\'' + ", Address=" + address + '\'' + ", Is_deleted=" + isDeleted + '}';
+        return "Client{"+"id="+id +", Client_name=' " + clientName + '\'' + ", login=" + login + '\'' + ", Client_password=" + clientPassword + '\'' + ", Phone=" + phone + '\'' + ", Address=" + address + '\'' + ", Is_deleted=" + isDeleted + '}';
+
     }
 
 }

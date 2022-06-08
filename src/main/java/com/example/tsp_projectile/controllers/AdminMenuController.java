@@ -62,10 +62,7 @@ public class AdminMenuController {
         product.setTitle(Title);
         productRepo.save(product);
         return "admin/addproduct";
-
-
     }
-
 
 
 //Админ может менять статус заказа, добавлять книги.

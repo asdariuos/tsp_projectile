@@ -28,5 +28,9 @@ public class ClientServices {
         return client.getId();
     }
 
+    public void deleteClientbyid(int  id)
+    {
+        clientRepo.deleteById(id);
+    }
 
 }

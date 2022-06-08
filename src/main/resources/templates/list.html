@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset = "utf-8">
+    <title>Клиенты</title>
+    <link rel = "stylesheet" type = "text/css" href = "main.css">
+</head>
+<body>
+<ul class = "menu">
+    <li><a href = "shop.html" >Редактирование каталога</a></li>
+    <li><a href = "list.html">Список клиентов</a></li>
+</ul>
+<div class=" container">
+    <form>
+        <p class = "p-clients">Список клиентов</p>
+       <table>
+        <tr th:each="client : ${clients}">
+                <td><span th:text="${client.getId()}">ID</span></td>
+               <td><span th:text="${client.getLogin()}"> Логин </span></td>
+
+               <td><span th:text="${client.getName()}"> Имя </span></td>
+
+        </tr>
+       </table>
+    </form>
+    <form method = "post">
+        <label>
+            <input name = "id" id = "name" type = "text">
+            <div class = "label-text">
+                Введите ID для удаления
+            </div>
+        </label>
+    </form>
+</div>
+</body>
+</html>

@@ -3,6 +3,7 @@ package com.example.tsp_projectile;
 import com.example.tsp_projectile.models.Admin;
 import com.example.tsp_projectile.models.Client;
 import com.example.tsp_projectile.repo.*;
+import com.example.tsp_projectile.services.ClientServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.Query;
@@ -19,6 +20,8 @@ import java.util.List;
 
 @Controller
 public class MainController {
+    @Autowired
+    private ClientServices clientServices;
     @Autowired
     private ClientRepo clientRepository;
 /*
@@ -64,14 +67,16 @@ public class MainController {
     }*/
     @GetMapping(value = "/list")
     public String getClients(Model model) {
-       // List<Client> clients = this.clientRepository.findAllById(1);
-        model.addAttribute("name", this.clientRepository.findById(1));
-
+        List<Client> clients = clientRepository.findAll();
+        model.addAttribute("clients", clients);
+        return "list";
+    }
+    @PostMapping(value ="/list")
+    public String deletebyid(Model model, @RequestParam int id)
+    {
+        clientServices.deleteClientbyid(id);
+        getClients(model);
         return "list";
     }
 
-    /*   @GetMapping ("/shop")
-    public String shop() {
-        return "shop";
-    }*/
 }

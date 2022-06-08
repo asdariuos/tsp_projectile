@@ -1,0 +1,56 @@
+[
+  {
+    "id": "1",
+    "title": "Евгений Онегин",
+    "author": "А.С. Пушкин",
+    "genre": "Роман в стихах",
+    "publication": "АСТ",
+    "price": "198",
+    "cover": "evgeniy_onegin.png"
+  },
+  {
+    "id": "2",
+    "title": "Преступление и наказание",
+    "author": "Ф.М. Достоевский",
+    "genre": "Роман",
+    "publication": "АСТ",
+    "price": "191",
+    "cover": "prestuplenie_i_nakazanie.png"
+  },
+  {
+    "id": "3",
+    "title": "Доктор Живаго",
+    "author": "Б.Л. Пастернак",
+    "genre": "Роман",
+    "publication": "Эксмо",
+    "price": "226",
+    "cover": "doctor_zhivago.png"
+  },
+  {
+    "id": "4",
+    "title": "Десять негритят",
+    "author": "Агата Кристи",
+    "genre": "Детектив",
+    "publication": "Эксмо",
+    "price": "213",
+    "cover": "desyat_negrityat.png"
+  },
+  {
+    "id": "5",
+    "title": "Три товарища",
+    "author": "Эрих Мария Ремарк",
+    "genre": "Роман",
+    "publication": "АСТ",
+    "price": "196",
+    "cover": "tri_tovarisha.png"
+  },
+  {
+    "id": "6",
+    "title": "Милый друг",
+    "author": "Ги де Мопассан",
+    "genre": "Роман",
+    "publication": "Эксмо",
+    "price": "240",
+    "cover": "miliy_drug.png"
+  }
+]

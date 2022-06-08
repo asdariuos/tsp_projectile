@@ -15,25 +15,20 @@ public class AuthorizationController {
     @Autowired
     private ClientRepo clientRepo;
 
-    @GetMapping("/authorization")
+    @GetMapping("/greeting")
     public String authorization(Model model) {
-        model.addAttribute("title", "Регистрация");
-        return "authorization";
+        model.addAttribute("title", "Вход");
+        return "greeting";
     }
 
-    @PostMapping(value = "/authorization")
+    @PostMapping(value = "/greeting")
     public String checkUser(Model model,
                             @RequestParam(name = "login") String login,
-                            @RequestParam(name = "password") String password,
-                            @RequestParam(name = "client_name") String clientName,
-                            @RequestParam(name = "client_password") String clientPassword,
-                            @RequestParam(name = "phone") String phone,
-                            @RequestParam(name = "address") String address,
-                            @RequestParam(name = "birthday_date")Date birthdayDate)
+                            @RequestParam(name = "password") String password)
     {
         Client client = new Client();
         Admin admin = new Admin();
-        /*if(login.equals("admin"))
+        if(login.equals("admin"))
             if(password.equals("1111"))
                 return "redirect:/admin_mode";
             else{
@@ -42,10 +37,11 @@ public class AuthorizationController {
                 else
                     return "/greeting";
                 if (client.getClientPassword().equals(password)){
-                    return "redirect:/shop";
+                    return "redirect:/shop?id="+client.getId();
                 }else
                     return "/greeting";
-            }*/
+            }
         return "/greeting";
     }
 }
+
